@@ -3,31 +3,31 @@ import { Todo } from './TodoInterface';
 import { Promise } from 'es6-promise';
 
 export class Todos implements TodosClassInterface {
+	todos: Todo[];
 
-	getItem(): Todo[] {
+	private getItem(): Todo[] {
 		return JSON.parse(localStorage.getItem('todos'));
 	}
 
-	setItem(todos: Todo[]): void {
+	private setItem(todos: Todo[]): void {
 		localStorage.setItem('todos', JSON.stringify(todos));
 	}
 
 	constructor() {
+		const initialTodos = [{
+			id: 1,
+			text: 'test todo',
+		}];
+
 		if (localStorage.getItem('todos') === null) {
-			localStorage.setItem('todos', JSON.stringify([{
-				id: 1,
-				text: 'test todo',
-			}]));
+			localStorage.setItem('todos', JSON.stringify(initialTodos));
 		}
-		
-		console.log(localStorage.getItem('todos'));
 
 		this.todos = JSON.parse(localStorage.getItem('todos'));
 	}
 
-	todos: Todo[];
-
 	getTodos(): Promise<Todo[]> {
+		this.todos = this.getItem();
 		return new Promise((resolve, reject) => {
 			resolve(this.todos);
 		});

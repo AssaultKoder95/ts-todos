@@ -12,7 +12,7 @@ function loadTodos() {
 }
 
 
-$("#addTodoBtn").click(function () {
+$("#addTodoBtn").click(() => {
 	let todoText: string = <string>$('#todoText').val();
 
 	let newTodo = {
@@ -20,18 +20,16 @@ $("#addTodoBtn").click(function () {
 		text: todoText,
 	};
 
-	todos.addTodo(newTodo).then(todo => {
-		console.log(todo);
+	todos.addTodo(newTodo).then(() => {
 		$('#todos').html('');
 		loadTodos();
 	})
 });
 
-$(document).on('click', '.deleteTodo', function (e) {
-	console.log('current id:', e.target.id);
+$(document).on('click', '.deleteTodo', (e) => {
 	const id: number = parseInt(e.target.id, 10);
 
-	todos.deleteTodo(id).then(todo => {		
+	todos.deleteTodo(id).then(() => {
 		$('#todos').html('');
 		loadTodos();
 	})
