@@ -1,0 +1,30 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+	margin: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div > input {
+	border-radius: 10px;
+	width: 200px;
+	height: 20px;
+	border: 1px solid #333;
+	padding-left: 10px;
+}
+
+div > button {
+	height: 25px;
+	border: 1px solid #353;
+	width: 70px;
+	border-radius: 10px;
+}
+
+div h2 {
+	font-size: 2em;
+	color: #333;
+}

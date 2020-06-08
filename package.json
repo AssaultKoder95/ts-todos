@@ -1,0 +1,33 @@
+{
+  "name": "ts-todos",
+  "version": "1.0.0",
+  "description": "A Todo App developed using typescript",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AssaultKoder95/ts-todos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AssaultKoder95/ts-todos/issues"
+  },
+  "homepage": "https://github.com/AssaultKoder95/ts-todos#readme",
+  "devDependencies": {
+    "es6-promise": "^4.2.8",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "@types/jquery": "^3.3.38",
+    "jquery": "^3.1.1"
+  }
+}
